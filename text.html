@@ -1,0 +1,90 @@
+<html>
+<head>
+<title>Registration Form</title>
+<script type="text/javascript">
+function validate()
+{
+        if(document.myForm.Name.value=="")
+        {
+	alert("please Provide Your Name");
+	document.myForm.Name.focus();
+	return false;
+        }
+        if(document.myForm.Email.value=="")
+        {
+	alert("please Provide Your Email ID");
+	document.myForm.Email.focus();
+	return false;
+        }
+        if((document.myForm.Zip.value=="")||
+        (document.myForm.Zip.value.length !=6))
+        {
+	alert("please Provide a value zip code format######");
+	document.myForm.Zip.focus();
+	return false;
+        }
+        if(document.myForm.Country.value=="-1")
+        {
+	alert("please Provide Your Country Name");
+	return false;
+        }
+	return true;
+}
+function validateEmail()
+{
+	var emailID=document.myForm.Email.value;
+	atpos=emailID.indexOf("@");
+	dotpos=emailID.lastIndexOf(".");
+	if(atpos<1\\(dotpos-atpos<2))
+        {
+	alert("please Enter Correct Email ID");
+	document.myForm.Email.focus();
+	return false;
+        }
+        return true;
+}
+</script>
+</head>
+<body>
+<form name="myForm" onsubmit="return(validate());">
+<table cellspacing="2" cellspacing="2" border="1">
+<tr>
+	<td>Name</td>
+	<td><input type="text" name="Name" /></td>
+</tr>
+<tr>
+                  <td>Email ID</td>
+	<td><input type="text" name="Email" onchange="validateEmail();"/></td>
+</tr>
+<tr>
+	<td>Zip code</td>
+	<td><input type="text" name="Zip" /></td>
+</tr>
+<tr>
+	<td>District</td>
+	<td><select name="dist">
+                 <option value="-1" selected>[Choose Yours]</option>
+                 <option value="1">Tirunelveli</option>
+                 <option value="2">Thoothukudi</option>
+                 <option value="3"> Kanyakumari</option>
+                 <option value="4"> Madurai</option>
+                 <option value="5"> Viruthunagar</option>
+                 <option value="6"> Dindigul</option>
+</select>
+</td></tr>
+<tr>
+                <td colspan="2" align="center">
+                 <input type="submit" value="Submit"/></td>
+</tr></table>
+</form></body></html>
+
+
+
+
+
+
+ 
+    
+
+
+<body>
